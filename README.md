@@ -7,9 +7,11 @@ This repository contains a fully automated *question-answering (QA) system* deve
 
 ## 📜 Project Summary
 ### 🔹 *What is SemEval Task 8: DataBench?*
-SemEval Task 8: DataBench is a *benchmarking competition* for evaluating *question-answering models* on structured datasets. The goal is to *answer questions based solely on provided datasets* without external data. Participants must build systems capable of understanding structured tabular data, processing it effectively, and generating relevant responses.
+SemEval Task 8: DataBench is a benchmarking competition for evaluating question-answering models on structured datasets. The goal is to answer questions based solely on provided datasets without external data. Participants must build systems capable of understanding structured tabular data, processing it effectively, and generating relevant responses.
 
-This challenge requires a *hybrid approach* combining structured querying with *advanced NLP techniques* to handle various types of questions, including Boolean, categorical, numerical, and list-based answers.
+The official dataset for this competition is hosted on Hugging Face and can be accessed here: [SemEval Task 8: DataBench Dataset](https://www.codabench.org/competitions/3360/).
+
+This challenge requires a hybrid approach combining structured querying with advanced NLP techniques to handle various types of questions, including Boolean, categorical, numerical, and list-based answers.
 
 ### 🔹 *How does this project work?*
 Our system processes structured datasets, extracts relevant information, and generates responses through a *multi-step approach*:
