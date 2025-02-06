@@ -20,6 +20,28 @@ Our system processes structured datasets, extracts relevant information, and gen
 4. *Prediction Output:* Generates structured predictions.txt and predictions_lite.txt files formatted for competition submission.
 
 ---
+📂 Folder Structure
+
+This repository follows a structured format to ensure easy navigation and reproducibility of results:
+
+|-- competition/
+    |-- 066_IBM_HR/
+        |-- all.parquet
+        |-- sample.parquet
+    |-- 067_TripAdvisor/
+        |-- all.parquet
+        |-- sample.parquet
+    |-- ... (other dataset folders)
+    |-- test_qa.csv
+
+Each dataset has two parquet files:
+
+all.parquet: Contains the full dataset.
+
+sample.parquet: A subset of all.parquet with limited rows for quick testing.
+
+test_qa.csv: Contains the questions to be answered.
+
 
 ## ⚙ Installation and Dependencies
 Ensure you have *Python 3.7+* installed. Then, install the required dependencies:
