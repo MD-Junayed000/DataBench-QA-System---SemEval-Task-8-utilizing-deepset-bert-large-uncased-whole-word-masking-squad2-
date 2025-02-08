@@ -1,7 +1,7 @@
 # 📌 DataBench QA System - SemEval Task 8
 
 ## 📝 Overview
-This repository contains a fully automated *question-answering (QA) system* developed for the *SemEval Task 8: DataBench Competition. The system is designed to extract answers from structured datasets, process them, and generate responses using **NLP techniques* and *transformer-based models*.
+This repository contains a fully automated *question-answering (QA) system* developed for the **SemEval Task 8: DataBench Competition**. The system is designed to extract answers from structured datasets, process them, and generate responses using **NLP techniques and transformer-based models.**
 
 ---
 
@@ -22,10 +22,12 @@ Our system processes structured datasets, extracts relevant information, and gen
 4. *Prediction Output:* Generates structured predictions.txt and predictions_lite.txt files formatted for competition submission.
 
 ---
-📂 Folder Structure
 
-This repository follows a structured format to ensure easy navigation and reproducibility of results:
+## 📂 Repository Structure
 
+This repository follows a structured format for easy navigation and reproducibility:
+
+```
 |-- competition/
     |-- 066_IBM_HR/
         |-- all.parquet
@@ -35,23 +37,35 @@ This repository follows a structured format to ensure easy navigation and reprod
         |-- sample.parquet
     |-- ... (other dataset folders)
     |-- test_qa.csv
+```
 
-Each dataset has two parquet files:
-
-all.parquet: Contains the full dataset.
-
-sample.parquet: A subset of all.parquet with limited rows for quick testing.
-
-test_qa.csv: Contains the questions to be answered.
-
-
-## ⚙ Installation and Dependencies
-Ensure you have *Python 3.7+* installed. Then, install the required dependencies:
-sh
-pip install pandas numpy scikit-learn transformers nltk torch
-
+- **all.parquet** - The full dataset.
+- **sample.parquet** - A small subset for quick testing.
+- **test\_qa.csv** - The list of questions that need to be answered.
 
 ---
+
+## 🌀 Workflow Pipeline
+
+Our system processes structured datasets, extracts relevant information, and generates responses through a **multi-step approach:**
+
+1. **Data Preprocessing** – Converts `.parquet` datasets into structured `.csv` files, ensuring clean and consistent formatting.
+2. **Semantic Column Matching** – Uses **TF-IDF & cosine similarity** to match dataset columns with questions.
+3. **Question Answering** – Extracts Boolean, categorical, numeric, and list-based answers using **structured queries and a transformer-based model (BERT)**.
+4. **Prediction Output** – Generates `predictions.txt` and `predictions_lite.txt` formatted for competition submission.
+
+---
+
+## ⚙ Installation & Dependencies
+
+Ensure you have **Python 3.7+** installed. Then, install the required dependencies:
+
+```sh
+pip install pandas numpy scikit-learn transformers nltk torch
+```
+
+---
+
 
 ## 🔧 Data Preprocessing
 ### 📜 clean_data.py
@@ -130,7 +144,18 @@ The system determines the *type of answer required*:
 
 If structured querying does not yield a confident answer, the system *uses a transformer-based QA model* to infer answers contextually.
 
-### 4️⃣ *Answer Formatting*
+### 4️⃣ *Transformer-Based Model for QA*
+
+- Uses **BERT-based QA model** (`deepset/bert-large-uncased-whole-word-masking-squad2`) as a fallback when structured queries do not yield confident answers.
+
+### 5️⃣ *Answer Formatting*
 Extracted answers are *structured into a submission format, ensuring compliance with the **SemEval Task 8: DataBench competition guidelines*. The results are stored in predictions.txt and predictions_lite.txt, which are then zipped for submission.
 
 ---
+
+## 🎉 Conclusion
+
+This system is a **highly optimized, NLP-powered structured data QA system** designed for SemEval Task 8. With **automated data cleaning, semantic column matching, and transformer-based QA models**, it ensures **high accuracy** and **efficient processing**.
+
+
+
