@@ -1,5 +1,4 @@
-# 📌 DataBench QA System - SemEval Task 8
-
+# 📌 Tabular QA
 ## 📝 Overview
 This repository contains a fully automated *question-answering (QA) system* developed for the **SemEval Task 8: DataBench Competition**. The system is designed to extract answers from structured datasets, process them, and generate responses using **NLP techniques and transformer-based models.**
 
